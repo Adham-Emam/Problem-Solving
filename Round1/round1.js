@@ -75,8 +75,8 @@ output: "robin...@example.com"
 
 function protectEmail(email) {
   email = email.split("@");
-  userEmail = email[0].split("_");
-  return `${userEmail[0]}...@${email[1]}`;
+  userEmail = email[0].split("").splice(0, 5).join("");
+  return `${userEmail}...@${email[1]}`;
 }
 
 console.log(protectEmail("robin_singh@example.com"));
@@ -109,7 +109,7 @@ console.log(convertToGigaByte(1_048_576))
 */
 
 function toGigaByte(KiloByte) {
-  return `${KiloByte * 10 ** -6} GigaByte`;
+  return `${KiloByte / 1024 ** 2} GigaByte`;
 }
 
 console.log(toGigaByte(1048576));
@@ -137,6 +137,6 @@ output: 7.5
 
 function getAverage(...input) {
   let result = input.reduce((a, b) => a + b);
-  return result / 2;
+  return result / input.length;
 }
 console.log(getAverage(2, 5, 8));
