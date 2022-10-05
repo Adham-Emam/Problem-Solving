@@ -12,7 +12,7 @@ Output:
 // write your code here
 
 console.log(`<div id="parent">
-<p>hello world</p>
+  <p>hello world</p>
 </div>`);
 
 // ***********************************************************
@@ -43,7 +43,7 @@ output: false
 
 // write your code here
 
-let is_Blank = (input) => (input.length === 0 ? `is Blank` : `is not Blank`);
+let is_Blank = (input) => !input.length;
 
 console.log(is_Blank(""));
 console.log(is_Blank("abc"));
@@ -75,7 +75,10 @@ output: "robin...@example.com"
 
 function protectEmail(email) {
   email = email.split("@");
-  userEmail = email[0].split("").splice(0, 5).join("");
+  userEmail = email[0]
+    .split("")
+    .splice(0, email[0].length / 2)
+    .join("");
   return `${userEmail}...@${email[1]}`;
 }
 
@@ -99,9 +102,9 @@ console.log(theSmallest(5, 4, 8, 14));
 
 // write your code here
 let a = 100,
-  b = 2.4;
+  b = Math.trunc(2.4);
 
-console.log(a ** parseInt(b));
+console.log(a ** b);
 // ***********************************************************
 // task8: Create a function that will convert from KiloByte to GigaByte
 /*
@@ -132,7 +135,7 @@ console.log(isOdd(2));
 // task10: Create a function that get an average of numbers
 /*
 console.log(getAverage(2,5,8))
-output: 7.5
+output: 5
 */
 
 function getAverage(...input) {
