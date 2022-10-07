@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #0f0e17;
+        color: white;
+        position: relative;
+        min-height: 100vh;
+        font-size: 1.3em;
+      }
+      form {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+      input {
+        width: 300px;
+        display: block;
+        margin: 10px 0 30px;
+        padding: 10px 20px;
+        background-color: transparent;
+        border: 2px solid white;
+        caret-color: white;
+        color: white;
+        transition-duration: 0.3s;
+      }
+      input::placeholder {
+        color: white;
+      }
+      input:focus {
+        outline: none;
+        border-color: #ff8906;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <label for="dollar">USD Dollars</label>
+      <input type="number" name="dollar" placeholder="0.00" />
+      <label for="egp">EGP Pounds</label>
+      <input type="number" name="egp" placeholder="0.00" />
+    </form>
+    <script src="main.js"></script>
+  </body>
+</html>
