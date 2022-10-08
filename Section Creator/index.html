@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        margin: 50px;
+      }
+      input,
+      select {
+        width: 250px;
+        padding: 10px 20px;
+      }
+      input:focus,
+      select:active {
+        outline: none;
+      }
+      .btn {
+        background-color: #1a1;
+        color: white;
+        border: none;
+        transition-duration: 0.3s;
+      }
+      .btn:hover {
+        background-color: #080;
+        cursor: pointer;
+      }
+      .results {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .box {
+        width: 100px;
+        background-color: rgb(255, 120, 2);
+        color: white;
+        text-align: center;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 10px 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <input
+        type="number"
+        name="elements"
+        class="input"
+        placeholder="Number Of Elements"
+      />
+      <input
+        type="text"
+        name="texts"
+        class="input"
+        placeholder="Elements Text"
+      />
+      <input class="btn" type="submit" name="create" value="Create" />
+      <div class="results"></div>
+    </form>
+    <script src="main.js"></script>
+  </body>
+</html>
