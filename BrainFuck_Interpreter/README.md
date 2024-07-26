@@ -175,13 +175,13 @@ For that, we have another function:
 def compute_jump_table(instructions: str) -> dict[int, int]:
     """
     Computes a jump-table for associating the braces with their start and end positions.
-    
+
     So for example if [ is seen at position 47 and it's ending is seen at position 80,
     the jump table will have { 47: 80, 80: 47 }, allowing either of them to know the position of the other end.
     """
     bracemap = {}
     stack = []
-    
+
     for index, char in enumerate(instructions):
         if char == "[":
             stack.append(index)
@@ -189,7 +189,7 @@ def compute_jump_table(instructions: str) -> dict[int, int]:
             start = stack.pop()
             bracemap[start] = index
             bracemap[index] = start
-    
+
     return bracemap
 ```
 
@@ -206,4 +206,19 @@ Now it’s easy, just checking for the zero conditions as mentioned and when we 
 ```python
 case "[":
     if cells[cur_cell] == 0:
-        pc
+        pc = jump_table[pc]
+case "]":
+    if cells[cur_cell] != 0:
+        pc = jump_table[pc]
+```
+
+And with that we have officially implemented all eight commands of brainfuck and we should be able to run pretty much any code out there.
+
+Let’s try a Hello, World, here’s an example from Wikipedia, put this into `hello.bf`
+
+```
+++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.
+```
+
+
+And run `python bf.py hello.bf` and if everything goes well it should print out `Hello World!` how exciting!
