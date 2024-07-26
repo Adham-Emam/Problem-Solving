@@ -1,4 +1,3 @@
-```markdown
 # Writing a Brainfuck Interpreter in Python
 
 Brainfuck is a tiny language that includes only 8 simple commands. Writing an interpreter for it is easy and is often seen as a simple programming exercise.
